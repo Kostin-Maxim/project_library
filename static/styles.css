@@ -1,0 +1,17 @@
+header {
+    border: 5px black solid;
+}
+
+nav {
+    border: 5px red solid;
+    width: 20%;
+}
+
+main {
+    width: 80%;
+    border: 5px blue solid;
+}
+
+.container {
+    display: flex;
+}
