@@ -4,20 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='styles.css') }}?v=1" rel="stylesheet">
 </head>
 
 <body>
     <header class="site-header">
-        <h1>Проект "Библиотека"</h1>
+        <h1>Проект "Библиотека": {% block name_content %}{% endblock%}</h1>
     </header>
     <div class="container">
         <nav>
-            <p>Игры</p>
-            <p>Книги</p>
+            <ul class="library-list">
+                <li>
+                    <a href="{{ url_for('gamespage') }}">
+                        <button>Игры</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('bookspage') }}">
+                        <button>Книги</button>
+                    </a>
+                </li>
+            </ul>
         </nav>
         <main>
-            <p>asd</p>
+            {% block content %}{% endblock %}
         </main>
     </div>
 </body>
